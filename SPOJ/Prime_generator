@@ -1,0 +1,50 @@
+#include <iostream>
+#include <math.h>
+ 
+using namespace std;
+ 
+int main()
+{
+	int A[10000];
+    int temp=0;
+    int m,n;
+    int j=0;
+    int i,t;
+ 
+    cin >> t;
+ 
+    for (int k = 0; k <t ; k++)
+    {
+    	    cin >> m;
+	    cin >> n;
+	    
+	    for (i =2; i<=n ; i++)
+	    {
+	        A[i] =1;
+	    }
+ 
+	    for (i = 2; i<=sqrt(n); i++)
+	    {
+	    	temp = 0;
+ 
+	        if(A[i] == 1)
+	        {
+	            for ( j = i*i ; j<=n ; j = ((i*i )+ (temp*i)))
+	            {
+	                A[j] = 0;
+	                temp++;
+	            }
+	        }
+	    }
+ 
+	    for (temp = 2; temp <=n ; temp ++)
+	    {
+	        if (temp >= m && A[temp] == 1)
+	        {
+	            cout << temp << endl;
+	        }
+	    }
+	    cout << endl;
+	}
+    return 0;
+}

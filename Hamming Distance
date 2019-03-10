@@ -1,49 +1,19 @@
-#include <iostream>
-using namespace std;
-
-int main() {
-	// your code goes here
-	
-	long  x , y;
-	long t1, t2;
-	long inc=0;
-	
-	cin>>x>>y;
-	
-	for (int i=0;  ; i++)
-	{
-		if(x == 0)
-		{
-			t1 = 0;
-		}
-		else
-		{
-			t1 = x%2;
-		}
-		
-		if(y==0)
-		{
-			t2 = 0 ;
-		}
-		
-		else
-		{
-			t2 = y%2;
-		}
-		
-		if(t1^t2 == 1)
-		{
-			inc++;
-		}
-		
-		x = x/2;
-		y = y/2;
-		
-		if (x==0&&y==0)
+class Solution {
+public:
+    int hammingDistance(int x, int y) {
+   
+	int inc=0;
+        for (int i=0;  ; i++)
+	    {   
+		    if (x == 0 && y == 0)
 			break;
-		
-	}
-	
-	cout <<inc;
-	return 0;
-}
+
+		    if((x%2)^(y%2) == 1)
+			inc++;
+
+		    x = x/2;
+		    y = y/2;
+	    }        
+        return inc;
+    }
+};

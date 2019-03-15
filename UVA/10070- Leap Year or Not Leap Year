@@ -25,7 +25,7 @@ int main() {
 				cout << "This is huluculu festival year." << endl;
 				h = 1;
 			}
-			if (year%55 == 0)
+			if (l==1 && year%55 == 0)
 			{
 				cout << "This is bulukulu festival year." << endl;
 				b = 1;

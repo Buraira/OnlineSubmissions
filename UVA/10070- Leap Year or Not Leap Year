@@ -10,14 +10,14 @@ int main() {
 	int l,h,b,year;
 	l=h=b=0;
 	
-	while (cin >> years)
+	while (getline(cin,years))
 	{
 		year = stoi(years);
-		if (year == 0)
-			break;
+	//	if (year == 0)
+	//		break;
 	
-		else
-		{
+	//	else
+	//	{
 			if ((year%4 == 0 && year%100 != 0) || year%400 == 0)
 			{
 				cout << "This is leap year." << endl;
@@ -40,6 +40,6 @@ int main() {
 			cout << endl;		
 			l=h=b=0;
 		}		
-	}	
+	//}	
 	return 0;
 }

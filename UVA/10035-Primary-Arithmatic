@@ -2,7 +2,6 @@
 using namespace std;
 
 int main() {
-	// your code goes here
 	
 	int num_a, num_b, sum, carry;
 	int c =0;
@@ -13,14 +12,15 @@ int main() {
 			break;
 			
 		c = 0;	
+		
 		for (int i = 0; ; i++)
 		{
-			sum = (num_a%10) + (num_b%10 + carry);
+			sum = (num_a%10) + ((num_b%10) + carry);
 			
 			if(sum > 9)
 			{
 				c++;
-				carry = (sum - (sum%10))/10;
+				carry = sum/10;
 			}
 			else
 				carry = 0 ;
@@ -33,11 +33,11 @@ int main() {
 		}
 		
 		if (c == 0)
-			cout << "No carry operation" << endl;
+			cout << "No carry operation." << endl;
 		else if (c == 1)
-			cout << c << " carry operation"<<endl;
+			cout << c << " carry operation."<<endl;
 		else 
-			cout << c << " carry operations" << endl;
+			cout << c << " carry operations." << endl;
 	}
 
 	return 0;

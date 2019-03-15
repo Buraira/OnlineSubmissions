@@ -1,1 +1,39 @@
 
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	
+	int year, l,h,b;
+	l=h=b=0;
+	
+	while (cin >> year;)
+	{
+		if (year == 0)
+			break;
+	
+		else
+		{
+			if (year%4 == 0 && year%100 != 0 && year%400 == 0)
+			{
+				cout << "Leap Year" << endl;
+				l=1;
+			}
+			if (year%15 == 0)
+			{	
+				cout << "Huluculu Festival" << endl;
+				h = 1;
+			}
+			if (year%55 == 0)
+			{
+				cout << "Buluculu Festival" << endl;
+				b = 1;
+			}
+			
+			if (l==0 && h==0 && b==0)
+				cout << "Normal Year" << endl;
+		}		
+	}	
+	return 0;
+}

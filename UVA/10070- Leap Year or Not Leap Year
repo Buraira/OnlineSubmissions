@@ -3,10 +3,10 @@
 
 using namespace std;
 
-int year(string r, int div)
+long long int year(string r, long long int div)
 {
-	int y = 0;
-	for (int i=0 ; i<r.length(); i++)
+	long long int y = 0;
+	for (long long int i=0 ; i<r.length(); i++)
 	{   
 		//y = 0;
 		y = (y*10 + (r[i] - '0'))%div;
@@ -29,30 +29,28 @@ int main() {
 	
 		else
 		{
+			if ((year(r,4) == 0 && year(r,100) != 0) || year(r,400) == 0)
+			{
+				cout << "This is leap year." << endl;
+				l=1;
+			}
+			if (year(r,15) == 0)
+			{	
+				cout << "This is huluculu festival year." << endl;
+				h = 1;
+			}
+			if (l==1 && year(r,55) == 0)
+			{
+				cout << "This is bulukulu festival year." << endl;
+				b = 1;
+			}
 		
+			if (l==0 && h==0 && b==0)
+				cout << "This is an ordinary year." << endl;
 			
-				if ((year(r,4) == 0 && year(r,100) != 0) || year(r,400) == 0)
-				{
-					cout << "This is leap year." << endl;
-					l=1;
-				}
-				if (year(r,15) == 0)
-				{	
-					cout << "This is huluculu festival year." << endl;
-					h = 1;
-				}
-				if (l==1 && year(r,55) == 0)
-				{
-					cout << "This is bulukulu festival year." << endl;
-					b = 1;
-				}
-				
-				if (l==0 && h==0 && b==0)
-					cout << "This is an ordinary year." << endl;
-				
-				cout << endl;		
-				l=h=b=0;
-			}	
+			cout << endl;		
+			l=h=b=0;
 		}	
+	}	
 	return 0;
 }

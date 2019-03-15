@@ -15,7 +15,7 @@ int main() {
 		c = 0;	
 		for (int i = 0; ; i++)
 		{
-			sum = (num_a%10) + (num_b%10);
+			sum = (num_a%10) + (num_b%10 + carry);
 			
 			if(sum > 9)
 			{
@@ -26,9 +26,9 @@ int main() {
 				carry = 0 ;
 			
 			num_a = num_a/10;
-			num_b = num_b/10 + carry;
+			num_b = num_b/10 ;
 		
-			if(num_a == 0)
+			if(num_a == 0 && num_b ==0)
 				break;
 		}
 		

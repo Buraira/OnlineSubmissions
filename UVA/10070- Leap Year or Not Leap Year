@@ -19,7 +19,7 @@ int main() {
 
 	string r;
 	
-	int l,h,b;
+	int l,h,b,n;
 	l=h=b=0;
 	
 	while (cin >> r)
@@ -41,10 +41,15 @@ int main() {
 		}
 	
 		if (l==0 && h==0 && b==0)
+		{
 			cout << "This is an ordinary year." << endl;
+			n = 1;
+		}
 		
-		cout << endl;		
-		l=h=b=0;
+		if (l!=0 || h!=0 || b!=0 || n!=0)
+			cout << endl;
+		
+		l=h=b=n=0;
 	}	
 	
 	return 0;

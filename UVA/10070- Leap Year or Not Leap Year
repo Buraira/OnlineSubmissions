@@ -19,11 +19,15 @@ int main() {
 
 	string r;
 	
-	int l,h,b,n;
-	l=h=b=0;
+	int l,h,b,n,c;
+	l=h=b=n=c=0;
 	
 	while (cin >> r)
 	{
+		if (c!=0)
+			cout << endl;
+		
+		c=1;
 		if ((year(r,4) == 0 && year(r,100) != 0) || year(r,400) == 0)
 		{
 			cout << "This is leap year." << endl;
@@ -46,8 +50,7 @@ int main() {
 			n = 1;
 		}
 		
-		if (l!=0 || h!=0 || b!=0 || n!=0)
-			cout << endl;
+	
 		
 		l=h=b=n=0;
 	}	

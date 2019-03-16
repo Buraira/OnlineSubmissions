@@ -44,12 +44,14 @@
         int i,u;
     	int j = 0;
     	
-        for(i=2, u=0; u !=11 ; i++)
+        for(i=2, u=0; i !=100 ; i++)
         {
-        	j =divTwo(i) ;
+        	j = divTwo(i) ;
+        	
         	if(j > 1)
         	{
         		j = divThree(j);
+        
         		if(j > 1)
         		{
         			j = divFive(j);
@@ -58,16 +60,20 @@
         			else
         			{ 
         				cout << i << " ";
-        				u++
+        				u++;
         			}
         		}
         		else
         		{
         			cout << i << " ";
-        			u++
+        			u++;
         		}
         	}
-        	u++;
+        	else
+        	{
+        		cout << i << " ";
+        		u++;
+        	}
         }
      
        // cout << "The 1500'th ugly number is " << i;

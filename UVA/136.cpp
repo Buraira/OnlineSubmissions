@@ -11,6 +11,8 @@
     		{
     			num/=2;
     		}
+    		else
+    			break;
     	}
     	return num;
     }   
@@ -23,6 +25,8 @@
     		{
     			num/=3;
     		}
+    		else
+    			break;
     	}
     	return num;
     }   
@@ -35,7 +39,10 @@
     		{
     			num/=5;
     		}
+    		else
+    			break;
     	}
+    	
     	return num;
     }  
     
@@ -44,7 +51,7 @@
         int i,u;
     	int j = 0;
     	
-        for(i=2, u=0; ; i++)
+        for(i=2, u=1; ; i++)
         {
         	j = divTwo(i) ;
         	
@@ -56,7 +63,7 @@
         		{
         			j = divFive(j);
         			if (j > 1)
-        				{continue;}
+        				continue;
         			else
         			{ 
         				cout << i << " ";
@@ -74,7 +81,8 @@
         		cout << i << " ";
         		u++;
         	}
-        	if (u >1500)
+        	
+        	if (u == 1500)
         		break;
         }
      

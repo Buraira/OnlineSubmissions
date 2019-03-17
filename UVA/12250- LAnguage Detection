@@ -15,17 +15,19 @@ int main() {
 		else
 		{
 			if (s == "HELLO")
-				cout << "Case" << i++ <<": ENGLISH";
+				cout << "Case " << ++i <<": ENGLISH" << endl;
 			else if (s == "HOLA")
-				cout << "Case" << i++ <<": SPANISH";
+				cout << "Case " << ++i <<": SPANISH"<< endl;
 			else if (s == "HALLO")
-				cout << "Case" << i++ <<": GERMAN";
+				cout << "Case " << ++i <<": GERMAN"<< endl;
 			else if (s == "BONJOUR")
-				cout << "Case" << i++ <<": FREANCH";
+				cout << "Case " << ++i <<": FRENCH"<< endl;
 			else if (s == "CIAO")
-				cout << "Case" << i++ <<": ITALIAN";
+				cout << "Case " << ++i <<": ITALIAN"<< endl;
 			else if (s == "ZDRAVSTVUJTE")
-				cout << "Case" << i++ <<": RUSSIAN";
+				cout << "Case " << ++i <<": RUSSIAN"<< endl;
+			else 
+				cout << "Case " << ++i <<": UNKNOWN"<< endl;
 		}
 	}
 	return 0;

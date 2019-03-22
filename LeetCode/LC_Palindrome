@@ -1,0 +1,30 @@
+#include <iostream>
+#include <math.h>
+#include <string>
+
+using namespace std;
+
+int main() {
+	// your code goes here
+	
+	int number,c; 
+	c=0;
+	cin >> number; 
+	int siz = log10(number) + 1;
+	string s = to_string(number);
+	for (int i = 0, j = 1; i < siz/2; i++, j++  )
+	{
+		if (s[i] == s[siz-j])
+			continue;
+		else 
+		{
+			c++;
+			break;
+		}
+	}
+	if (c >0 )
+		cout << "not palindrome";
+	else 
+		cout << "palindrome";
+	return 0;
+}

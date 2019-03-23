@@ -1,30 +1,56 @@
-#include <iostream>
-#include <math.h>
-#include <string>
+class Solution {
+public:
+    bool isPalindrome(int x) {
+        bool is;
+        
+    	int c; 
+	    c=0;
+	    
+	    string s = to_string(x);
+        int siz = s.length();
+        for (int i = 0, j = 1; i < siz/2; i++, j++  )
+        {
+            if(s[0] == '-')
+            {
+                c++;
+                is = 0 ;
+                break;
+            }
+            if (s[i] == s[siz-j])
+            {
+                is = 1 ;
+                continue;
+            }
+            else 
+            {
+                c++;
+                is = 0;
+                break;
+            }
+        }
+        
+        return is;
+        
+    }
+};
 
-using namespace std;
+int stringToInteger(string input) {
+    return stoi(input);
+}
+
+string boolToString(bool input) {
+    return input ? "True" : "False";
+}
 
 int main() {
-	// your code goes here
-	
-	int number,c; 
-	c=0;
-	cin >> number; 
-	int siz = log10(number) + 1;
-	string s = to_string(number);
-	for (int i = 0, j = 1; i < siz/2; i++, j++  )
-	{
-		if (s[i] == s[siz-j])
-			continue;
-		else 
-		{
-			c++;
-			break;
-		}
-	}
-	if (c >0 )
-		cout << "not palindrome";
-	else 
-		cout << "palindrome";
-	return 0;
+    string line;
+    while (getline(cin, line)) {
+        int x = stringToInteger(line);
+        
+        bool ret = Solution().isPalindrome(x);
+
+        string out = boolToString(ret);
+        cout << out << endl;
+    }
+    return 0;
 }

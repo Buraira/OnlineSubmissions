@@ -18,10 +18,18 @@ int main() {
 				arr[n2][n1] = 1;
 			}
 			
-			for (i = 0; i < v ; i++){
-				for (j = 0; j < v ; j++){
-					cout << arr[i][j]<< " ";
+				for (i = 0; i < v ; i++){
+				q.push(i);
+				for (j = i+1; j < v ; j++){
+					//cout << arr[i][j]<< " "
+					if(arr[i][j] == 1)
+						q.push(j);
 				}
+			while(!q.empty()){
+				cout<< q.front() <<" ";
+				q.pop();
+			}
+				cout << endl;
 				cout << endl;
 			}
 		}

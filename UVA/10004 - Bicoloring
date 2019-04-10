@@ -38,6 +38,11 @@ int main() {
 						check[j] = 1;
 					}
 				}
+				
+				while(!q.empty()){
+					cout<< q.front() <<" ";
+					q.pop();
+				}
 			}		
 		}
 	}

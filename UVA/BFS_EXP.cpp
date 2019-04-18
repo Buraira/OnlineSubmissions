@@ -1,29 +1,15 @@
 #include <iostream>
-    #include <queue>
+   #include <queue>
     #include <vector>
     #include <array>
      
     using namespace std;
-     
-    int main()
+    
+    int v,e; 
+    
+    int bfs (int arr[v][v], int x)
     {
-        int v,e,i,j,t,n1,n2;
-        queue<int> q;
-     
-        cin >> v >> e;
-     
-        int ifParent[v] = {0};
-        int ifVisited[v] = {0};
-        int colored[v] = {0};
-        int arr[v][v] = {0};
-     
-        for(i = 0; i<e; i++){
-            cin >> n1 >> n2;
-            arr[n1][n2] = 1;
-            arr[n2][n1] = 1;
-        }
-     
-        ifVisited[0] = 1;
+    	ifVisited[0] = 1;
         ifParent[0] = 1;
         q.push(0);
      
@@ -48,6 +34,27 @@
     			}
     		}
         }
+    }
+    int main()
+    {
+        int i,j,t,n1,n2;
+        queue<int> q;
+    	bool bipartite = true;
+    	
+        cin >> v >> e;
+     
+        int ifParent[v] = {0};
+        int ifVisited[v] = {0};
+        int colored[v] = {0};
+        int arr[v][v] = {0};
+     
+        for(i = 0; i<e; i++){
+            cin >> n1 >> n2;
+            arr[n1][n2] = 1;
+            arr[n2][n1] = 1;
+        }
+     
+        
     
     return 0;
-    }   
+} 

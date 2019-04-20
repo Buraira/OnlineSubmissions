@@ -1,4 +1,5 @@
 #include <iostream>
+<<<<<<< HEAD
 #include <queue>
 #include <vector>
 #include <array>
@@ -60,3 +61,64 @@ int main()
     
  return 0;
 }   
+=======
+   #include <queue>
+    #include <vector>
+    #include <array>
+     
+    using namespace std;
+    
+    int v,e; 
+    
+    int bfs (int arr[v][v], int x)
+    {
+    	ifVisited[0] = 1;
+        ifParent[0] = 1;
+        q.push(0);
+     
+    	while(!q.empty()){
+    		t = q.front();
+    		cout<<t << " ";
+    		q.pop();
+    		colored[t] = 1;
+     
+    		for (j = 0; j<v ; j++){	
+    			
+    			if(arr[t][j] == 1)
+    			{
+    				if (colored[j] == 0)    
+	    		       colored[j] = 1;
+	    		    if(ifVisited[j] == 0 )
+	    		    {	
+	    		    	q.push(j);
+	    		    	ifVisited[j] = 1;
+	    		    	ifParent[j] = t;
+	    		    }
+    			}
+    		}
+        }
+    }
+    int main()
+    {
+        int i,j,t,n1,n2;
+        queue<int> q;
+    	bool bipartite = true;
+    	
+        cin >> v >> e;
+     
+        int ifParent[v] = {0};
+        int ifVisited[v] = {0};
+        int colored[v] = {0};
+        int arr[v][v] = {0};
+     
+        for(i = 0; i<e; i++){
+            cin >> n1 >> n2;
+            arr[n1][n2] = 1;
+            arr[n2][n1] = 1;
+        }
+     
+        
+    
+    return 0;
+} 
+>>>>>>> 23c3c8b727b5acffa303b0307e5fb90a7bfc08fd

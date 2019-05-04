@@ -1,29 +1,67 @@
 class Solution {
 public:
-    bool canJump(vector<int>& nums) {
+    #define MAXV 1000
+    
+    int processed[MAXV+1];
+    int discovered[MAXV+1];
+    int parent[MAXV+1];
+    int arr[MAXV+1][MAXV+1] ;
+    int times=0;
+    int entry_time[MAXV+1];
+    int exit_time[MAXV+1];
+    bool ret = false;
+    
+    bool dfs (int i,vector<int>& v)
+    {
+        discovered[i] = 1;
+        times = times+1;
+        entry_time[i] = times;
         
-        bool ret = true;
-        int i,j,c,l;
-        c=0;
-        l = nums.size();
-        for (i = 0; i<l; i++){
-            if (nums[i] == 0 && i != l-1)
-            {
-                for (j = i+1; j<l ; j++){
-                    if (nums[j] != 0)
-                    {
-                        ret = false;
-                        c++;
-                    }
-                }
-            }
-            else if ( i == l-1 && nums[i] == 0)
+        //cout << i << endl;
+        
+        for (int j = 0 ; j < v.size(); j++){
+          if (arr[i][j] == 1 && discovered[j] == 0){
+              parent[j] = i;
+              if(j == (v.size() - 1))
+              { 
                 ret = true;
-            else
-                continue;
+                break;
+              }
+              dfs(j,v);
+          }
         }
-       return ret;
+        processed[i] = 1;
+        exit_time[i] = times;
+        times = times+1;
+        return ret;
     }
+    
+    bool canJump(vector<int>& nums) {
+        int i,j,t,n1,n2;
+        std::vector<int> v;
+        v = nums;
+        //v = {2,3,0,0,1};
+        
+        for (i = 0; i<v.size(); i++){
+        for (j = 0; j < v.size(); j++){
+ 
+            arr[i][j] = 0;
+        }
+        }
+ 
+    for(i = 0; i<v.size(); i++){
+        if (v[i] != 0){
+            for (int j = i+1,t=0; t<v[i] ; j++){
+                arr[i][j] = 1;
+                t++;
+            }
+        }
+    }
+ 
+    bool ret = dfs(0,v);
+    
+    return ret;
+} 
 };
 
 void trimLeftTrailingSpaces(string &input) {

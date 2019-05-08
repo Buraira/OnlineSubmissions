@@ -1,0 +1,59 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int year(string r, int d)
+{
+	int y = 0;
+	for (int i=0 ; i<r.length(); i++)
+	{   
+		//y = 0;
+		y = (y*10 + (r[i] - '0'))%d;
+	}
+	return y;
+}
+
+
+int main() {
+
+	string r;
+	
+	int l,h,b,n,c;
+	l=h=b=n=c=0;
+	
+	while (cin >> r)
+	{
+		if (c!=0)
+			cout << endl;
+		
+		c=1;
+		if ((year(r,4) == 0 && year(r,100) != 0) || year(r,400) == 0)
+		{
+			cout << "This is leap year." << endl;
+			l=1;
+		}
+		if (year(r,15) == 0)
+		{	
+			cout << "This is huluculu festival year." << endl;
+			h = 1;
+		}
+		if (l==1 && year(r,55) == 0)
+		{
+			cout << "This is bulukulu festival year." << endl;
+			b = 1;
+		}
+	
+		if (l==0 && h==0 && b==0)
+		{
+			cout << "This is an ordinary year." << endl;
+			n = 1;
+		}
+		
+	
+		
+		l=h=b=n=0;
+	}	
+	
+	return 0;
+}

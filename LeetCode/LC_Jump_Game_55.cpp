@@ -14,7 +14,8 @@ public:
         int i;
            // bipartite = true;
         for (i=0 ; i<v ; i++){
-           processed[i] = discovered[i] = 0;    
+           processed[i] .push_back(0);
+           discovered[i].push_back(0);    
         }
     }
      
